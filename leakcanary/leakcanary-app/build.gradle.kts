@@ -1,5 +1,6 @@
 import java.io.InputStreamReader
 
+
 plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
@@ -92,6 +93,8 @@ dependencies {
   androidTestImplementation("androidx.compose.ui:ui-test-junit4:${libs.versions.compose.get()}")
   debugImplementation("androidx.compose.ui:ui-tooling:${libs.versions.compose.get()}")
   debugImplementation("androidx.compose.ui:ui-test-manifest:${libs.versions.compose.get()}")
+  debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.14'
+
   // TODO Split out what's included in debug vs the subset for release
   implementation(projects.leakcanary.leakcanaryAndroid)
   implementation(libs.hilt.android)
